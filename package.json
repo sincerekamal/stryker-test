@@ -1,0 +1,79 @@
+{
+  "name": "tptl",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node ./src/bin/www",
+    "coverage": "nyc npm run test",
+    "test": "jasmine --config=./test/jasmine-unit.json",
+    "test:e2e": "jasmine --config=./test/jasmine-int.json",
+    "test:all": "npm run test && npm run test:e2e"
+  },
+  "dependencies": {
+    "axios": "^0.21.1",
+    "body-parser": "^1.19.0",
+    "cookie-parser": "~1.4.4",
+    "debug": "~2.6.9",
+    "dotenv": "^8.2.0",
+    "express": "~4.16.1",
+    "express-http-context": "^1.2.4",
+    "http-errors": "~1.6.3",
+    "joi": "^17.4.2",
+    "jsonlint": "^1.6.3",
+    "jsonwebtoken": "^8.5.1",
+    "luxon": "^2.0.1",
+    "mariadb": "^2.5.4",
+    "module-alias": "^2.2.2",
+    "morgan": "~1.9.1",
+    "proxyquire": "^2.1.3",
+    "sequelize": "^6.6.5",
+    "sinon": "^11.1.2",
+    "uuid": "^8.3.2",
+    "winston": "^3.3.3"
+  },
+  "_moduleAliases": {
+    "@config": "./src/config",
+    "@middlewares": "./src/middlewares",
+    "@models": "./src/models",
+    "@modules": "./src/v1/modules",
+    "@public": "./src/public_modules",
+    "@utils": "./src/utils",
+    "@server": "./src/server",
+    "@logger": "./src/utils/logger",
+    "@services": "./src/services",
+    "@errors": "./src/utils/errors",
+    "@e2eHelpers": "./test/e2e/testHelpers",
+    "@root": "./"
+  },
+  "devDependencies": {
+    "@stryker-mutator/core": "^5.5.0",
+    "@stryker-mutator/jasmine-runner": "^5.5.0",
+    "@stryker-mutator/karma-runner": "^5.5.0",
+    "@stryker-mutator/typescript-checker": "^5.5.0",
+    "jasmine": "^3.8.0",
+    "jasmine-core": "^3.10.1",
+    "nyc": "^15.1.0",
+    "supertest": "^6.1.4"
+  },
+  "nyc": {
+    "all": true,
+    "check-coverage": false,
+    "reporter": [
+      "lcov",
+      "text-summary"
+    ],
+    "include": [
+      "src/**/*.js"
+    ],
+    "exclude": [
+      "src/**/index.js",
+      "src/server.js",
+      "src/bin",
+      "src/config",
+      "src/logs",
+      "src/migrations",
+      "src/models",
+      "src/seeders"
+    ]
+  }
+}

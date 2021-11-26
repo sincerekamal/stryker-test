@@ -1,0 +1,9 @@
+node_modules
+logs
+*.env
+!example.env
+!test_example.env
+coverage
+.nyc_output
+# stryker temp files
+.stryker-tmp

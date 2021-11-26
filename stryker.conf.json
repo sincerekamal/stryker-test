@@ -1,0 +1,10 @@
+{
+  "$schema": "./node_modules/@stryker-mutator/core/schema/stryker-schema.json",
+  "packageManager": "npm",
+  "reporters": ["html", "clear-text", "progress", "dashboard"],
+  "mutate": ["src/v1/modules/users/route.js"],
+  "tempDirName": "stryker-tmp",
+  "coverageAnalysis": "perTest",
+  "testRunner": "jasmine",
+  "jasmineConfigFile": "test/jasmine-unit.json"
+}

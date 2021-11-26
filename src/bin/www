@@ -1,0 +1,9 @@
+const path = require("path");
+
+// load .env variables into environment variables, if .env is available
+require("dotenv").config({ path: path.resolve(__dirname, "..", ".env") });
+
+// register modules that are aliased (see package.json)
+require("module-alias/register");
+
+require("@server");
